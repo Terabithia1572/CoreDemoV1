@@ -76,8 +76,9 @@
                         <div class="tech-btm">
                             <img src="~/CoreBlogTema/images/banner1.jpg" class="img-fluid" alt="">
                         </div>
-                        
-                        @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml") 
+
+                        <h4>Mail Bültenine Abone Olun</h4>
+                        @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
 
                         @await Component.InvokeAsync("CategoryList")
 
