@@ -28,6 +28,8 @@ namespace CoreDemo
         {
             services.AddControllersWithViews();
 
+
+
             services.AddSession();
 
 
@@ -40,6 +42,7 @@ namespace CoreDemo
             });
 
             services.AddMvc();
+
             services.AddAuthentication(
 
                 CookieAuthenticationDefaults.AuthenticationScheme)
