@@ -32,7 +32,7 @@ namespace CoreDemo.Controllers
             if(results.IsValid && p.WriterPassword == againPassword)
             {
                 p.WriterStatus = true;
-                p.WriterAbout = "Deneme Test";
+                p.WriterAbout = "Deneme";
                 wm.WriterAdd(p);
                 return RedirectToAction("Index", "Blog");
             }
