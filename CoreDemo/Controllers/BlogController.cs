@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         
@@ -27,5 +28,6 @@ namespace CoreDemo.Controllers
             var values = bm.GetBlogsByID(id);
             return View(values);
         }
+        
     }
 }
