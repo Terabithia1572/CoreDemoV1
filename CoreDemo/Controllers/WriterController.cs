@@ -6,12 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace CoreDemo.Controllers
-{ 
+{
 
     public class WriterController : Controller
     {
-    
-        
+
+
         public IActionResult Index()
         {
             return View();
@@ -21,8 +21,13 @@ namespace CoreDemo.Controllers
             return View();
         }
 
-   
+
         public IActionResult WriterMail()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public IActionResult Test()
         {
             return View();
         }
