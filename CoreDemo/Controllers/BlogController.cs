@@ -35,7 +35,7 @@ namespace CoreDemo.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            var values = bm.GetBlogListByWriter(1);
+            var values = bm.GetListWithCategoryByWriterBlogManager(1);
             return View(values);
         }
 
