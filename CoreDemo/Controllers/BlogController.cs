@@ -80,5 +80,26 @@ namespace CoreDemo.Controllers
             return View();
         }
 
+        public IActionResult DeleteBlog(int id)
+        {
+            var blogvalue = bm.TGetByID(id);
+            bm.TDelete(blogvalue);
+            return RedirectToAction("BlogListByWriter");
+        }
+        
+        [HttpGet]
+        public IActionResult EditBlog(int id)
+        {
+            var blogvalues = bm.TGetByID(id);
+            
+            return View(blogvalues);
+        }
+        [HttpPost]
+
+        public IActionResult EditBlog(Blog p)
+        {
+            return RedirectToAction("BlogListByWriter");
+        }
+
     }
 }
