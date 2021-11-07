@@ -47,14 +47,16 @@ namespace CoreDemo.Controllers
         {
             return PartialView();
         }
-        [AllowAnonymous]
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult WriterEditProfile()
         {
-            var writervalues = wm.TGetByID(1);
+            var writervalues = wm.TGetByID(2);
             return View(writervalues);
         }
+
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
         {
@@ -63,7 +65,7 @@ namespace CoreDemo.Controllers
             if(results.IsValid)
             {
                 wm.TUpdate(p);
-                return RedirectToAction("Dashboard", "Index");
+                return RedirectToAction("Index", "Dashboard");
             }
             else
             {
