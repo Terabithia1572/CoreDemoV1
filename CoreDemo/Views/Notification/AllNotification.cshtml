@@ -23,7 +23,12 @@
                 @{
                     var sayi = Convert.ToDateTime((DateTime.Now- item.NotificationDate).ToString()).ToShortDateString();
                     @sayi.ToString().Substring(0,2)
-                
+                    //var sayi1 = DateTime.Now.ToString("yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss");
+                    //var sayi2 = item.NotificationDate.ToString("yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss");
+                @*int sonuc = string.Compare(sayi1, sayi2);
+                @sonuc.ToString()*@
+              
+
                 }
             </td>
         </tr>
