@@ -57,18 +57,24 @@ namespace CoreDemo.Controllers
             return PartialView();
         }
 
-        [AllowAnonymous]
+       
         [HttpGet]
         public IActionResult WriterEditProfile()
-        {
-            var writervalues = wm.TGetByID(2);
+        { 
+            Context c = new Context();
+            var userMail = User.Identity.Name;
+           
+            var writerID = c.Writers.Where(x => x.WriterMail == userMail).Select(
+                y => y.WriterID).FirstOrDefault();
+            var writervalues = wm.TGetByID(writerID);
             return View(writervalues);
         }
 
-        [AllowAnonymous]
+        
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
         {
+
             WriterValidator wl = new WriterValidator();
             ValidationResult results = wl.Validate(p);
             if(results.IsValid)

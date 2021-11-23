@@ -15,7 +15,7 @@ namespace CoreDemo.Controllers
         BlogManager bm = new BlogManager(new EfBlogRepository());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryRepository());
         Context c = new Context();
-        [AllowAnonymous]
+        
         public IActionResult Index()
         {
             ViewBag.ToplamBlogSayisi = bm.GetList().Count();
