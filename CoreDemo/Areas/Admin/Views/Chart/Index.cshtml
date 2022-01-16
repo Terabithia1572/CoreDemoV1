@@ -12,3 +12,39 @@
     </div>
 </div>
 
+<script type="text/javascript" src="htpps://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(DrawonLoad);
+
+
+    function DrawonLoad() {
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Admin/Chart/CategoryChart',
+                success: function (chartsdata) {
+                    var Data = chartsdata.jsonlist;
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'CategoryName');
+                    data.addColumn('number', 'CategoryCount');
+
+
+                    for (var i = 0; i < Data.length; i++) {
+                        data.addRow([Data[i].CategoryName, Data[i].CategoryCount]);
+                    }
+                    var chart =new google.visualization.PieChart(document.getElementById('chartdiv'));
+                    chart.draw(data,
+                        {
+                            title: "Google Chart Projesi",
+                            position: "top",
+                            fontsize: "16px"
+                        });
+                }
+            })
+        })
+    }
+
+</script>
