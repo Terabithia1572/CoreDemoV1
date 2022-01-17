@@ -22,6 +22,7 @@ namespace CoreDemo.Areas.Admin.Controllers
             list.Add(new CategoryClass {categoryname="Teknoloji",categorycount=10 });
             list.Add(new CategoryClass {categoryname="Yazılım",categorycount=14 });
             list.Add(new CategoryClass {categoryname="Spor",categorycount=5 });
+            list.Add(new CategoryClass {categoryname="Sinema",categorycount=2 });
             return Json(new { jsonlist = list });
         }
     }
