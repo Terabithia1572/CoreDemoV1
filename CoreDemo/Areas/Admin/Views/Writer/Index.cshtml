@@ -7,10 +7,19 @@
 <h1>Yazar Ajax İşlemleri</h1>
 <br />
 <button type="button" id="btnGetList" class="btn btn-outline-primary">Yazar Listesi</button>
+<button type="button" id="btngetbyid" class="btn btn-outline-success">Yazar Getir</button>
 <br />
 <br />
 <div id="writerlist">
     Buraya Yazarlar gelecek
+</div>
+<br />
+<div id="writerget">
+    Buraya 1 yazar gelecek
+</div>
+<br />
+<div>
+    <input type="text" id="writerid" placeholder="Yazar ID Değerini Girin"  class="form-control"/>
 </div>
 
 @section scripts{ 
@@ -33,5 +42,11 @@
             }
         });
     });
+
+    $("#btngetbyid").click(x => {
+        let id = $("#writerid").val();
+        console.log(id);
+    });
+
 </script>
 }
